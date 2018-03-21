@@ -6,57 +6,59 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
-</canvas>
+
 
 <script
 			  src="https://code.jquery.com/jquery-3.3.1.js"
 			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 			  crossorigin="anonymous"></script>
-<script>
-
-window.onload = function() {
-    var Albatros_x = 10;
-    var Albatros_y = 10;
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    var img = new Image();
-    img.src = 'img/albatros.jpg';
-    function drawBall() {
-      ctx.clearRect(Albatros_x-1,Albatros_y-1,12,12.5);
-      ctx.drawImage(img, Albatros_x, Albatros_y,10 ,10);
-    }
-    setInterval(drawBall, 5);// affichage toutes les 5ms
-    $(document).keydown(
-    function (evt) {
-      if (evt.keyCode == 39) {
-        Albatros_x = Albatros_x+1;
-      }
-      else if (evt.keyCode == 37) {
-        Albatros_x = Albatros_x-1;
-      }
-      else if (evt.keyCode == 38) {
-        Albatros_y = Albatros_y-1;
-      }
-      else if (evt.keyCode == 40) {
-        Albatros_y = Albatros_y+1;
-      }
-    }
-    );
-
-}
-
-</script>
+<script src="meteo.js"></script>
 
 </head>
 
 <body>
-  <h1>Albatros.io</h1>
+  <h1 style="float:left;">Albatros.io</h1>
   <p><i>"Souvent, pour s'amuser, les hommes d'équipage<br>
     Prennent des Albatros, vastes oiseaux des mers<br>
     Qui suivent, indolents, compagnons de voyage<br>
     Les navires glissants sur les gouffres amers"
   </i></p>
+
+  <script>
+
+  window.onload = function() {
+      var Albatros_x = 10;
+      var Albatros_y = 10;
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      var img = new Image();
+      img.src = 'img/albatros.jpg';
+      function drawBall() {
+        ctx.clearRect(Albatros_x-1,Albatros_y-1,12,12.5);
+        ctx.drawImage(img, Albatros_x, Albatros_y,10 ,10);
+      }
+      setInterval(drawBall, 5);// affichage toutes les 5ms
+      $(document).keydown(
+      function (evt) {
+        if (evt.keyCode == 39) {
+          Albatros_x = Albatros_x+1;
+        }
+        else if (evt.keyCode == 37) {
+          Albatros_x = Albatros_x-1;
+        }
+        else if (evt.keyCode == 38) {
+          Albatros_y = Albatros_y-1;
+        }
+        else if (evt.keyCode == 40) {
+          Albatros_y = Albatros_y+1;
+        }
+      }
+      );
+    }
+
+  </script>
+
+  <canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;"></canvas>
 
 </body>
 </html>
